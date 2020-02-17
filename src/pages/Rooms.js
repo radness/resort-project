@@ -8,7 +8,7 @@ export default function Rooms() {
     <Hero hero="roomsHero">
       <Banner title="our rooms">
         <Link to="/" className="btn-primary">
-          Go to home
+          Go to Home
         </Link>
       </Banner>
     </Hero>
