@@ -15,7 +15,6 @@ class RoomProvider extends Component {
   };
 
   // getData
-
   componentDidMount() {
     // this.getData
     let rooms = this.formatData(items);
@@ -39,9 +38,15 @@ class RoomProvider extends Component {
     return tmpItems;
   }
 
+  getRoom = slug => {
+    let tmpRooms = [...this.state.rooms];
+    const room = tmpRooms.find(room => room.slug === slug);
+    return room;
+  };
+
   render() {
     return (
-      <RoomContext.Provider value={{ ...this.state }}>
+      <RoomContext.Provider value={{ ...this.state, getRoom: this.getRoom }}>
         {this.props.children}
       </RoomContext.Provider>
     );
